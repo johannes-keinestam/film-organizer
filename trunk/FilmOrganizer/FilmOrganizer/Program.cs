@@ -15,4 +15,8 @@ namespace FilmOrganizer {
             Application.Run(new MainWindow());
         }
     }
+
+    static class ProgramHandler {
+        public static readonly FilmCollection FilmCollectionHandler = new FilmCollection(FilmCollection.InitStyle.ImportDummy);
+    }
 }
