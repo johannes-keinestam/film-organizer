@@ -24,15 +24,28 @@ namespace FilmOrganizer {
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
             if (listView1.SelectedItems.Count > 0) {
-                // TODO change info at bottom to film
-                Console.WriteLine(listView1.SelectedItems[0]);
+                groupBox1.Text = listView1.SelectedItems[0].Text;
             } else {
+                groupBox1.Text = null;
                 // TODO change info at bottom to empty 
             }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e) {
-            listView1.Items.Add("Dummy"+(new Random()).Next());
+            //listView1.Items.Add("Dummy"+(new Random()).Next());
+            ProgramHandler.FilmCollectionHandler.GetFilmList().AddLast(new Film("Dummy" + (new Random()).Next(), 0, 0, 0));
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e) {
+            listView1.Items.Clear();
+            foreach (Film f in ProgramHandler.FilmCollectionHandler.GetFilmList()) {
+                ListViewItem filmItem = new ListViewItem(f.Title);
+                filmItem.SubItems.Add(Convert.ToString(f.Year));
+                filmItem.SubItems.Add(Convert.ToString(f.Megabytes)+" MB");
+                filmItem.SubItems.Add(Convert.ToString(f.Minutes)+" min");
+
+                listView1.Items.Add(filmItem);
+            }
         }
     }
 }
