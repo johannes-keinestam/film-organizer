@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             this.FolderListView = new System.Windows.Forms.ListView();
+            this.PathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addFolderButton = new System.Windows.Forms.Button();
             this.folderBrowseDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.PathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,10 +44,15 @@
             this.FolderListView.GridLines = true;
             this.FolderListView.Location = new System.Drawing.Point(6, 19);
             this.FolderListView.Name = "FolderListView";
-            this.FolderListView.Size = new System.Drawing.Size(416, 212);
+            this.FolderListView.Size = new System.Drawing.Size(416, 214);
             this.FolderListView.TabIndex = 0;
             this.FolderListView.UseCompatibleStateImageBehavior = false;
             this.FolderListView.View = System.Windows.Forms.View.Details;
+            // 
+            // PathColumn
+            // 
+            this.PathColumn.Text = "Path";
+            this.PathColumn.Width = 500;
             // 
             // addFolderButton
             // 
@@ -59,11 +64,6 @@
             this.addFolderButton.UseVisualStyleBackColor = true;
             this.addFolderButton.Click += new System.EventHandler(this.addFolderButton_Click);
             // 
-            // PathColumn
-            // 
-            this.PathColumn.Text = "Path";
-            this.PathColumn.Width = 500;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -74,7 +74,7 @@
             this.groupBox1.Controls.Add(this.addFolderButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(428, 266);
+            this.groupBox1.Size = new System.Drawing.Size(428, 268);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Folders";
@@ -103,12 +103,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 464);
+            this.ClientSize = new System.Drawing.Size(452, 466);
+            this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SettingsDialog";
-            this.Text = "SettingsDialog";
-            this.Load += new System.EventHandler(this.SettingsDialog_Load);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Settings";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -123,5 +127,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+
     }
 }

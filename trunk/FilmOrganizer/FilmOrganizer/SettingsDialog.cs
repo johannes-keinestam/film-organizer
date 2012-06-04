@@ -12,11 +12,11 @@ namespace FilmOrganizer {
 
         public SettingsDialog() {
             InitializeComponent();
-            UpdateFolderList();
+            UpdateSettings();
         }
 
-        private void SettingsDialog_Load(object sender, EventArgs e) {
-
+        private void UpdateSettings() {
+            UpdateFolderList();
         }
 
         private void UpdateFolderList() {
@@ -60,6 +60,5 @@ namespace FilmOrganizer {
             Properties.Settings.Default.Save();
             this.Close();
         }
-
     }
 }
