@@ -118,9 +118,7 @@
             // toolStripButton3
             // 
             this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.Checked = true;
             this.toolStripButton3.CheckOnClick = true;
-            this.toolStripButton3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
