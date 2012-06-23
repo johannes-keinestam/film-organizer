@@ -21,6 +21,7 @@ namespace FilmOrganizer {
         public MainWindow() {
             InitializeComponent();
             this.filmListView.ListViewItemSorter = Sorter;
+            this.splitContainer2.Panel2Collapsed = true;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) {

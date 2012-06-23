@@ -138,17 +138,25 @@ namespace FilmOrganizer {
                 }
             }
 
+            Console.WriteLine("largest file: " + largestFile);
+
+            if (largestFile != null) {
+
+            }
             this.Minutes = (int)(MediaInfoWrapper.GetFilmDuration(GetFilmFilePath(largestFile))/60000);
         }
 
         private string GetFilmFilePath(FileInfo largestFile) {
+            if (largestFile == null) {
+                return null;
+            }
             string filmFilePath = null;
             string extension = largestFile.Extension.ToLower();
 
             if (extension == ".vob") {
                 string filePath = largestFile.FullName;
                 filmFilePath = filePath.Substring(0, filePath.LastIndexOf("_")) + "_0.IFO";
-            } else if (extension == ".iso" || extension == ".img") {
+            } else if (extension == ".iso" || extension == ".img" || extension == ".bin") {
             } else {
                 filmFilePath = largestFile.FullName;
             }
